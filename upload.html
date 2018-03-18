@@ -57,7 +57,7 @@
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            
+
             <h1>Analyze Image</h1>
               Enter the URL to an image of a natural or artificial landmark, then click the <strong>Upload</strong> button.
               <br><br>
@@ -77,21 +77,27 @@
                 </div>
             </div> 
 
-              <!-- Image to analyze: <input type="text" name="inputImage" id="inputImage" value="http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg" />
-              <button onclick="processImage()">Analyze image</button>
               <br><br>
               <div id="wrapper" style="width:1020px; display:table;">
-                  <div id="jsonOutput" style="width:600px; display:table-cell;">
-                      Response:
-                      <br><br>
-                      <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
-                  </div>
                   <div id="imageDiv" style="width:420px; display:table-cell;">
                       Source image:
                       <br><br>
                       <img id="sourceImage" width="400" />
                   </div>
-              </div> -->
+                  <div id="jsonOutput" style="width:600px; display:table-cell;">
+                      <div id="description" style="width:300px; display:table-cell;">
+                            Description:
+                            <br><br>
+                            <textarea id="descriptionTextArea" class="UIInput" style="width:600px; height:50px;"></textarea>
+                        </div>
+                        <br><br>
+                        <div id="text" style="width:300px; display:table-cell;">
+                            Text:
+                            <br><br>
+                            <textarea id="textTextArea" class="UIInput" style="width:600px; height:50px;"></textarea>
+                        </div>
+                  </div>
+              </div>
           </div>
         </div>
       </div>
@@ -110,7 +116,7 @@
     <!-- <script src="js/jquery.min.js"></script> -->
     <script src="js/creative.min.js"></script>
     <script src="js/uploadFile.js"></script>
-
+    <script src="js/main.js"></script>
 
   </body>
 
