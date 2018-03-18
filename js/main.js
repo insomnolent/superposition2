@@ -51,9 +51,10 @@ function getDescription(url) {
             // Show formatted JSON on webpage.
 
             $("#descriptionTextArea").val(label);
-            //$("#desc-card").fadeIn(200);
-            $('#desc-card').addClass('animated slideInRight');
-            $('#desc-card').attr('style','visibility: visible');
+            $("#description1").val(label);
+            $("#description2").val(label);
+            $("#description3").val(label);
+            $("#description4").val(label);
 
             //var dataS = JSON.stringify(data);
 
@@ -95,8 +96,11 @@ function getImageText(url) {
         };
 
         // Display the image.
-        //document.querySelector("#sourceImage").src = url;
-        //$("#img-card").fadeIn();
+        document.querySelector("#sourceImage").src = url;
+        document.querySelector("#picture1").src = url;
+        document.querySelector("#picture2").src = url;
+        document.querySelector("#picture3").src = url;
+        document.querySelector("#picture4").src = url;
 
         // Perform the REST API call.
         $.ajax({

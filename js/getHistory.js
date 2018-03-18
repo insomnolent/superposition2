@@ -23,6 +23,12 @@ $.ajax({
     dataType: "json"
 }).done(function(json) {
     // Handle Response
+     for(i = json.length - 1; i > json.length - 5; i++) {
+        var url = "https://filestore.blurriness60.hasura-app.io/v1/file/";
+         url += json.file_id;
+         processImage(url);
+     }
+
 }).fail(function(xhr, status, errorThrown) {
     console.log("Error: " + errorThrown);
     console.log("Status: " + status);
