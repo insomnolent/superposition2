@@ -47,10 +47,11 @@ upload_btn.onclick = function () {
        })
        .then(function(data) {
            fileId = data.file_id;
+           url = url + fileId;
+            processImage(url);
        })
        .catch(function(error) {
            alert('Upload failed:' + error);
        });
-     url += fileId;
-     processImage(url);
+
 };
