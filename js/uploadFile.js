@@ -21,6 +21,7 @@ var file_input = document.getElementById('file_input');
 //     });
 // };
 
+
 upload_btn.onclick = function () {
     if (! (file_input || file_input.files || file_input.files[0])) {
         upload_btn.innerHTML = 'Please select a file and try again';
@@ -46,10 +47,11 @@ upload_btn.onclick = function () {
        })
        .then(function(data) {
            fileId = data.file_id;
+           url = url + fileId;
+            processImage(url);
        })
        .catch(function(error) {
            alert('Upload failed:' + error);
        });
-     url += fileId;
-     processImage(url);
+
 };
