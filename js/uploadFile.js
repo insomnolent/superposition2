@@ -27,6 +27,7 @@ upload_btn.onclick = function () {
         return;
     }
     var url = "https://filestore.blurriness60.hasura-app.io/v1/file";
+
     var file = file_input.files[0];
     var requestOptions = {
         method: 'POST',
