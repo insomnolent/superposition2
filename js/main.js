@@ -50,7 +50,7 @@ function getDescription(url) {
             var label = data.description.captions[0].text;
             // Show formatted JSON on webpage.
 
-            $("#descriptionTextArea").val(label);
+            $("#descriptionTextArea").text(label);
             $('#desc-card').addClass('animated slideInRight');
             $('#desc-card').attr('style','visibility: visible');
             // $("#description1").val(label);
@@ -136,9 +136,9 @@ function getImageText(url) {
 
             // Show formatted JSON on webpage.
 
-            $("#textTextArea").val(text);
+            $("#textTextArea").text(text);
             if (text.length > 0) {
-                $("#textTextArea").val("(No text detected in image)");
+                $("#textTextArea").text("(No text detected in image)");
             }
             //$("#text-card").fadeIn(200);
             $('#text-card').addClass('animated slideInRight');
