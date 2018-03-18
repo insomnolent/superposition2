@@ -137,7 +137,7 @@ function getImageText(url) {
             // Show formatted JSON on webpage.
 
             $("#textTextArea").text(text);
-            if (text.length > 0) {
+            if (text.length == 0) {
                 $("#textTextArea").text("(No text detected in image)");
             }
             //$("#text-card").fadeIn(200);
