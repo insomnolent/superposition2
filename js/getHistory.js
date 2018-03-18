@@ -22,38 +22,39 @@ $.ajax({
     type: "POST",
     dataType: "json"
 }).done(function(json) {
+  console.log("JSON IS", json);
     // Handle Response
     if (json.length == 0) {
         $("#no-hist").attr('style','visibility: visible');
+        $("#picture1").attr('style','visibility: hidden');
+    } else {
+        var url = "https://filestore.blurriness60.hasura-app.io/v1/file/";
+        url += json[json.length-4].file_id;
+        document.querySelector("#picture1").src=url;
     }
-    var counter = 0;
+    // var counter = 0;
     if (json.length < 2) {
-        $("#picture2").attr('style','visibility: visible');
+        $("#picture2").attr('style','visibility: hidden');
+    } else {
+        var url = "https://filestore.blurriness60.hasura-app.io/v1/file/";
+        url += json[json.length-3].file_id;
+        document.querySelector("#picture2").src=url;
     }
     if (json.length < 3) {
-        $("#picture3").attr('style','visibility: visible');
+        $("#picture3").attr('style','visibility: hidden');
+    } else {
+        var url = "https://filestore.blurriness60.hasura-app.io/v1/file/";
+        url += json[json.length-2].file_id;
+        document.querySelector("#picture3").src=url;
     }
     if (json.length < 4) {
-        $("#picture4").attr('style','visibility: visible');
-    }
-     for (i = json.length - 1; i > json.length - 5; i--) {
+        $("#picture4").attr('style','visibility: hidden');
+    } else {
         var url = "https://filestore.blurriness60.hasura-app.io/v1/file/";
-         url += json.file_id;
-        // renderImage(url, counter);
-         if (counter == 0) {
-             document.querySelector("#picture1").src = url;
-         }
-         if (counter == 1) {
-             document.querySelector("#picture2").src = url;
-         }
-         if (counter == 2) {
-             document.querySelector("#picture3").src = url;
-         }
-         if (counter == 3) {
-             document.querySelector("#picture4").src = url;
-         }
-         counter++;
-     }
+        url += json[json.length-1].file_id;
+        document.querySelector("#picture4").src=url;
+    }
+
 
 }).fail(function(xhr, status, errorThrown) {
     console.log("Error: " + errorThrown);
