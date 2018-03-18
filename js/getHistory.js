@@ -27,6 +27,7 @@ $.ajax({
     if (json.length == 0) {
         $("#no-hist").attr('style','visibility: visible');
         $("#picture1").attr('style','visibility: hidden');
+        // $("#description1").attr('style','visibility: hidden');
     } else {
         var url = "https://filestore.blurriness60.hasura-app.io/v1/file/";
         url += json[json.length-4].file_id;
@@ -35,6 +36,8 @@ $.ajax({
     // var counter = 0;
     if (json.length < 2) {
         $("#picture2").attr('style','visibility: hidden');
+                // $("#description2").attr('style','visibility: hidden');
+
     } else {
         var url = "https://filestore.blurriness60.hasura-app.io/v1/file/";
         url += json[json.length-3].file_id;
@@ -42,6 +45,8 @@ $.ajax({
     }
     if (json.length < 3) {
         $("#picture3").attr('style','visibility: hidden');
+                // $("#description3").attr('style','visibility: hidden');
+
     } else {
         var url = "https://filestore.blurriness60.hasura-app.io/v1/file/";
         url += json[json.length-2].file_id;
@@ -49,6 +54,8 @@ $.ajax({
     }
     if (json.length < 4) {
         $("#picture4").attr('style','visibility: hidden');
+                // $("#description4").attr('style','visibility: hidden');
+
     } else {
         var url = "https://filestore.blurriness60.hasura-app.io/v1/file/";
         url += json[json.length-1].file_id;
