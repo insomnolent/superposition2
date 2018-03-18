@@ -25,6 +25,10 @@ function getDescription(url) {
 
         // Display the image.
         document.querySelector("#sourceImage").src = url;
+        // $("#img-card").fadeIn(200);
+        $('#img-card').addClass('animated slideInLeft');
+        $('#img-card').attr('style','visibility: visible');
+
 
         // Perform the REST API call.
         $.ajax({
@@ -47,6 +51,9 @@ function getDescription(url) {
             // Show formatted JSON on webpage.
 
             $("#descriptionTextArea").val(label);
+            //$("#desc-card").fadeIn(200);
+            $('#desc-card').addClass('animated slideInRight');
+            $('#desc-card').attr('style','visibility: visible');
 
             //var dataS = JSON.stringify(data);
 
@@ -88,7 +95,8 @@ function getImageText(url) {
         };
 
         // Display the image.
-        document.querySelector("#sourceImage").src = url;
+        //document.querySelector("#sourceImage").src = url;
+        //$("#img-card").fadeIn();
 
         // Perform the REST API call.
         $.ajax({
@@ -123,6 +131,13 @@ function getImageText(url) {
             // Show formatted JSON on webpage.
 
             $("#textTextArea").val(text);
+            if (text.length > 0) {
+                $("#textTextArea").val("(No text detected in image)");
+            }
+            //$("#text-card").fadeIn(200);
+            $('#text-card').addClass('animated slideInRight');
+            $('#text-card').attr('style','visibility: visible');
+
 
             //var dataS = JSON.stringify(data);
             console.log("text",text);

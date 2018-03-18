@@ -14,6 +14,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -59,33 +61,42 @@
           <div class="col-lg-10 mx-auto">
 
             <h1>Analyze Image</h1>
-              Enter the URL to an image of a natural or artificial landmark, then click the <strong>Upload</strong> button.
+              Select an image file from your computer, then click the <strong>Upload</strong> button.
               <br><br>
 
-            <input id="file_input" type="file">
-            <button id="file_submit">Upload</button>
+             <label class="btn btn-default btn-file">
+                  <input id="file_input" type="file">
+             </label>
+            <button id="file_submit" class="btn btn-primary">Upload</button>
 
               <br><br>
-              <div id="wrapper" style="width:1020px; display:table;">
-                  <div id="imageDiv" style="width:420px; display:table-cell;">
-                      Source image:
-                      <br><br>
-                      <img id="sourceImage" width="400" />
-                  </div>
-                  <div id="jsonOutput" style="width:600px; display:table-cell;">
-                      <div id="description" style="width:300px; display:table-cell;">
-                            Description:
-                            <br><br>
-                            <textarea id="descriptionTextArea" class="UIInput" style="width:600px; height:50px;"></textarea>
-                        </div>
-                        <br><br>
-                        <div id="text" style="width:300px; display:table-cell;">
-                            Text:
-                            <br><br>
-                            <textarea id="textTextArea" class="UIInput" style="width:600px; height:50px;"></textarea>
+              <div class="d-flex flex-row justify-content-center">
+                  <div class="p-2">
+                      <div class="card" id="img-card" style="width: 400px; visibility:hidden;">
+                          <div class="card-body">
+                            <h5 class="card-title" style="color:black">Source Image</h5>
+                            <img id="sourceImage" width="350px" />
+                          </div>
                         </div>
                   </div>
-              </div>
+                  <div class="p-2">
+
+
+                        <div class="card" id="text-card" style="width: 400px; visibility:hidden;">
+                            <div class="card-body">
+                              <h5 class="card-title" style="color:black">Image Text</h5>
+                              <p class="card-text" id="textTextArea"></p>
+                            </div>
+                          </div>
+                          <br><br>
+                          <div class="card" id="desc-card" style="width: 400px;visibility:hidden;">
+                              <div class="card-body">
+                                <h5 class="card-title" style="color:black">Image Description</h5>
+                                <p class="card-text" id="descriptionTextArea"></p>
+                              </div>
+                            </div>
+                  </div>
+                </div>
           </div>
         </div>
       </div>
