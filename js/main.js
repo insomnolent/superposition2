@@ -126,6 +126,7 @@ function getImageText(url) {
 
             //var dataS = JSON.stringify(data);
             if (text.length() > 0) {
+                window.speechSynthesis.speak(new SpeechSynthesisUtterance("Here are the words in this image."));
                 var msg = new SpeechSynthesisUtterance(text);
                 window.speechSynthesis.speak(msg);
             } else {
