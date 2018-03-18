@@ -26,7 +26,7 @@ upload_btn.onclick = function () {
         upload_btn.innerHTML = 'Please select a file and try again';
         return;
     }
-    var url = "https://filestore.blurriness60.hasura-app.io/v1/file";
+    var url = "https://filestore.blurriness60.hasura-app.io/v1/file/";
 
     var file = file_input.files[0];
     var requestOptions = {
@@ -37,15 +37,19 @@ upload_btn.onclick = function () {
         credentials: 'include'
     };
     upload_btn.innerHTML = 'Uploading...';
+    var fileId;
     fetch(url, requestOptions)
         .then(function(response) {
            upload_btn.innerHTML = 'Uploaded!';
+           //window.location.reload();
            return response.json();
        })
        .then(function(data) {
-           console.log(data.file_id);
+           fileId = data.file_id;
        })
        .catch(function(error) {
            alert('Upload failed:' + error);
        });
+     url += fileId;
+     processImage(url);
 };
