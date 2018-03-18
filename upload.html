@@ -9,8 +9,8 @@
     <meta name="author" content="">
 
     <title>VisualEyes</title>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> -->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">VisualEyes</a>
+        <a class="navbar-brand js-scroll-trigger" href="./index.html">VisualEyes</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,7 +43,7 @@
               <a class="nav-link js-scroll-trigger" href="./about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="./upload.html">Upload</a>
+              <a class="nav-link js-scroll-trigger" href="#page-top">Upload</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="./history.html">History</a>
@@ -58,14 +58,29 @@
         <div style="padding: 50px"></div>
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            <h1>
-              <strong>VisualEyes</strong>
-            </h1>
-            <hr>
-          </div>
-          <div class="col-lg-8 mx-auto">
-            <p style="font-size: 30px" class="text-faded mb-5">A personalized tool for the visually-impaired</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Get Started</a>
+            
+            <h1>Analyze Image</h1>
+              Enter the URL to an image of a natural or artificial landmark, then click the <strong>Upload</strong> button.
+              <br><br>
+
+            <input id="file_input" type="file">
+            <button id="file_submit">Upload</button>
+
+              <!-- Image to analyze: <input type="text" name="inputImage" id="inputImage" value="http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg" />
+              <button onclick="processImage()">Analyze image</button>
+              <br><br>
+              <div id="wrapper" style="width:1020px; display:table;">
+                  <div id="jsonOutput" style="width:600px; display:table-cell;">
+                      Response:
+                      <br><br>
+                      <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
+                  </div>
+                  <div id="imageDiv" style="width:420px; display:table-cell;">
+                      Source image:
+                      <br><br>
+                      <img id="sourceImage" width="400" />
+                  </div>
+              </div> -->
           </div>
         </div>
       </div>
@@ -81,7 +96,10 @@
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Custom scripts for this template -->
+    <!-- <script src="js/jquery.min.js"></script> -->
     <script src="js/creative.min.js"></script>
+    <script src="js/uploadFile.js"></script>
+
 
   </body>
 
