@@ -49,7 +49,7 @@ upload_btn.onclick = function () {
            fileId = data.file_id;
            url = url + fileId;
           processImage(url);
-          processImageUploadText(url);
+          // processImageUploadText(url);
 
        })
        .catch(function(error) {
